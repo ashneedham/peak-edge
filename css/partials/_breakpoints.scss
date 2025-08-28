@@ -1,0 +1,24 @@
+// Define breakpoints as variables
+$breakpoint-xs-height: 780px;
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1440px;
+
+// Mixin for easy breakpoint usage
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == xs {
+        @media screen and (max-width: #{$breakpoint-xs}) and (max-height: #{$breakpoint-xs-height}) { @content; }
+    } @else if $breakpoint == sm {
+        @media screen and (min-width: #{$breakpoint-sm}) { @content; }
+    } @else if $breakpoint == md {
+        @media screen and (min-width: #{$breakpoint-md}) { @content; }
+    } @else if $breakpoint == lg {
+        @media screen and (min-width: #{$breakpoint-lg}) { @content; }
+    } @else if $breakpoint == lg_portrait {
+        @media screen and (min-height: #{$breakpoint-lg}) { @content; }
+    } @else if $breakpoint == xl {
+        @media screen and (min-width: #{$breakpoint-xl}) { @content; }
+    }
+}

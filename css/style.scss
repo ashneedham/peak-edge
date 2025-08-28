@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+@use 'partials/reset';
+@use 'partials/breakpoints';
+@use 'partials/variables' as *;
+@use 'partials/mixins';
+@use 'partials/animations';
+@use 'partials/text';
+@use 'partials/header';
+@use 'partials/footer';
+@use 'partials/buttons';
+@use 'partials/forms';
+@use 'partials/blocks';
+
+html {
+  height: auto;
+}
+
+body {
+  min-height: 100%;
+  background: url("../img/bg-terrain.png") no-repeat $background_colour;
+  background-size: cover;
+}
+
+main {
+  padding: 0 1em;
+  margin: 0 auto;
+
+  @include breakpoints.respond-to(md) {
+    padding: 1.5em;
+    max-width: 40em;
+  }
+
+  h2 {
+    text-align: center;
+  }
+  #intro {
+    margin-bottom: 4em;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  h3 {
+    text-align: center;
+  }
+}

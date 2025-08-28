@@ -1,0 +1,111 @@
+@use 'breakpoints';
+@use 'variables' as *;
+@use 'buttons' as *;
+
+form {
+    position: relative;
+}
+
+input[type=text], input[type=email], input[type=password] {
+    font-size: 1.4em;
+    font-weight: 500;
+    padding: 0.55em 1em 0.55em 1em;
+    border: $text_alt_colour solid 2px;
+    border-radius: $border-radius /2;
+    box-sizing: border-box;
+    background: $text_alt_colour;
+    margin-bottom: 1em;
+    outline: none;
+    line-height: 1.3;
+    width: 100%;
+    display: inline-block;
+    transition: outline 0.2s ease-in-out;
+
+    &:active, &:focus {
+        outline: $success_colour 1px;
+        transition: outline 0.2s ease-in-out;
+    }
+
+    &.error {
+        border-color: $error_colour;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 1em;
+            height: 1em;
+            position: absolute;
+            background: url('/img/exclamation-icon.svg') no-repeat;
+        }
+    }
+
+}
+
+label {
+    font-size: 1.4em;
+    display: inline-block;
+    margin-bottom: 0.5em;
+
+    &:after {
+        content: ":";
+    }
+
+    &:matches(~input.error):before {
+        content: "";
+        display: block;
+        width: 1em;
+        height: 1em;
+        position: absolute;
+        background: url('/img/exclamation-icon.svg') no-repeat;
+    }
+}
+
+input[type=checkbox] {
+    display: none;
+
+    &+label {
+        margin-bottom: 1.5em;
+        vertical-align: middle;
+        line-height: 1;
+
+        &:before {
+            content: "";
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            padding: 0.1em;
+            background: $text_alt_colour;
+            border: $text_alt_colour solid 2px;
+            border-radius: $border-radius /2;
+            margin-right: 0.5em;
+            vertical-align: middle;
+        }
+
+        &:after {
+            content: "";
+        }
+    }
+
+    &:checked~label:before {
+        background: url('/img/tick-icon.svg') no-repeat $text_alt_colour;
+    }
+
+    &.error~label:before {
+        border-color: $error_colour;
+    }
+}
+
+label.validation {
+    display: block;
+    position: absolute;
+    background: $error_colour;
+    border-radius: $border-radius /2;
+    box-shadow: rgba($text_colour, 0.6) 0 0 1.6em;
+    padding: 0.5em 1em;
+    margin-top: -1em;
+    right: 0;
+
+    &:after {
+        content: "";
+    }
+}

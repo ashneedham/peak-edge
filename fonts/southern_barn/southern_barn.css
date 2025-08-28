@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Southern Barn';
+    src: url('fonts/Southern-Barn.eot');
+    src: url('fonts/Southern-Barn.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Southern-Barn.woff2') format('woff2'),
+         url('fonts/Southern-Barn.woff') format('woff'),
+         url('fonts/Southern-Barn.ttf')  format('truetype'),
+         url('fonts/Southern-Barn.svg#Southern Barn') format('svg');
+}

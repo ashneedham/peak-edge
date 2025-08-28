@@ -1,0 +1,64 @@
+@use "breakpoints";
+@use "variables" as variables;
+
+body {
+    color: variables.$text_colour;
+    font-family: serif;
+    font-weight: lighter;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+P {
+    margin-bottom: 1.5em;
+
+    &.small {
+        font-size: 0.9em;
+    }
+}
+
+h1 {
+    font-family: 'Southern Barn';
+    font-size: 2.3em;
+    font-weight: 900;
+    margin-bottom: 1.2em;
+    line-height: 1.1;
+
+
+}
+
+h2, h3 {
+    font-family: 'Southern Barn';
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 0.4em;
+    line-height: 1.1;
+    padding: 0;
+
+    @include breakpoints.respond-to(sm) {
+        font-size: 2.4rem;
+        padding: 0 0.4em;
+    }
+
+    @include breakpoints.respond-to(md) {
+        font-size: 3rem;
+        padding: 0 1em;
+    }
+
+}
+
+a {
+    color: variables.$primary_colour;
+}
+
+main {
+    font-size: 1.3em;
+
+    @include breakpoints.respond-to(md) {
+        font-size: 1.75em;
+    }
+    @include breakpoints.respond-to(md) {
+        font-size: 1.5em;
+    }
+}
+

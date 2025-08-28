@@ -1,0 +1,69 @@
+@keyframes wobble {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    75% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes throb {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes throbMini {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.035); }
+    100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(2em);
+        filter: blur(4);
+        opacity: 0;
+    }
+    to {}
+}
+
+@keyframes slideInAtScale {
+    from {
+        transform: translateY(4.5em) scale(1.2);
+        filter: blur(4);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(2em) scale(1.2);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-2em);
+        filter: blur(4);
+        opacity: 0;
+    }
+    to {}
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to {}
+}
+
+@keyframes finalPositionAndScale {
+    from {
+    }
+    to {
+        transform: translateY(0) scale(1);
+    }
+}
+
+.ani-slide-in {
+    animation: slideIn 0.75s ease-in-out backwards;
+}
+.ani-delay-2_2 { animation-delay: 2.2s; }
+.ani-delay-2_4 { animation-delay: 2.4s; }
+.ani-delay-2_6 { animation-delay: 2.6s; }
+.ani-delay-2_8 { animation-delay: 2.8s; }
+.ani-delay-3_0 { animation-delay: 3s; }

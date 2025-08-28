@@ -1,0 +1,31 @@
+@use 'breakpoints';
+@use 'variables' as *;
+
+.button {
+  font-size: 1.1em;
+  font-family: 'Southern Barn';
+  text-decoration: none;
+  border: solid 4px $primary_colour;
+  border-radius: $border-radius;
+  padding: 0.7em 1em 0.5em 1em;
+  color: $primary_colour;
+  display: inline-block;
+  line-height: 1;
+  transition: all 0.2s ease-in-out;
+
+  @include breakpoints.respond-to(sm) {
+    font-size: 1.2em;
+    border-size: 2px;
+  }
+
+  &:hover, &:active {
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+    border-width: 6px;
+
+    @include breakpoints.respond-to(md) {
+      border-size: 3px;
+    }
+  }
+
+}

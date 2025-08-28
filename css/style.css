@@ -1,0 +1,441 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, main, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@keyframes wobble {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes throb {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes throbMini {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.035);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translateY(2em);
+    filter: blur(4);
+    opacity: 0;
+  }
+}
+@keyframes slideInAtScale {
+  from {
+    transform: translateY(4.5em) scale(1.2);
+    filter: blur(4);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(2em) scale(1.2);
+  }
+}
+@keyframes slideInDown {
+  from {
+    transform: translateY(-2em);
+    filter: blur(4);
+    opacity: 0;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes finalPositionAndScale {
+  to {
+    transform: translateY(0) scale(1);
+  }
+}
+.ani-slide-in {
+  animation: slideIn 0.75s ease-in-out backwards;
+}
+
+.ani-delay-2_2 {
+  animation-delay: 2.2s;
+}
+
+.ani-delay-2_4 {
+  animation-delay: 2.4s;
+}
+
+.ani-delay-2_6 {
+  animation-delay: 2.6s;
+}
+
+.ani-delay-2_8 {
+  animation-delay: 2.8s;
+}
+
+.ani-delay-3_0 {
+  animation-delay: 3s;
+}
+
+body {
+  color: #3F4445;
+  font-family: serif;
+  font-weight: lighter;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+P {
+  margin-bottom: 1.5em;
+}
+P.small {
+  font-size: 0.9em;
+}
+
+h1 {
+  font-family: "Southern Barn";
+  font-size: 2.3em;
+  font-weight: 900;
+  margin-bottom: 1.2em;
+  line-height: 1.1;
+}
+
+h2, h3 {
+  font-family: "Southern Barn";
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 0.4em;
+  line-height: 1.1;
+  padding: 0;
+}
+@media screen and (min-width: 768px) {
+  h2, h3 {
+    font-size: 2.4rem;
+    padding: 0 0.4em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h2, h3 {
+    font-size: 3rem;
+    padding: 0 1em;
+  }
+}
+
+a {
+  color: #2B6F7C;
+}
+
+main {
+  font-size: 1.3em;
+}
+@media screen and (min-width: 1024px) {
+  main {
+    font-size: 1.75em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main {
+    font-size: 1.5em;
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 40vh;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  header {
+    height: 50vh;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header {
+    height: 78vh;
+  }
+}
+header #logo {
+  display: block;
+  margin: 0;
+  animation: slideInAtScale 1s ease-in-out 0.3s both, finalPositionAndScale 0.5s ease-in-out 2s both;
+}
+header #logo img {
+  width: 4em;
+}
+@media screen and (min-width: 768px) {
+  header #logo img {
+    width: 6em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header #logo img {
+    width: 8em;
+  }
+}
+
+footer {
+  margin-top: 3em;
+  padding: 0 2em;
+  text-align: center;
+}
+
+.button {
+  font-size: 1.1em;
+  font-family: "Southern Barn";
+  text-decoration: none;
+  border: solid 4px #2B6F7C;
+  border-radius: 7px;
+  padding: 0.7em 1em 0.5em 1em;
+  color: #2B6F7C;
+  display: inline-block;
+  line-height: 1;
+  transition: all 0.2s ease-in-out;
+}
+@media screen and (min-width: 768px) {
+  .button {
+    font-size: 1.2em;
+    border-size: 2px;
+  }
+}
+.button:hover, .button:active {
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+  border-width: 6px;
+}
+@media screen and (min-width: 1024px) {
+  .button:hover, .button:active {
+    border-size: 3px;
+  }
+}
+
+form {
+  position: relative;
+}
+
+input[type=text], input[type=email], input[type=password] {
+  font-size: 1.4em;
+  font-weight: 500;
+  padding: 0.55em 1em 0.55em 1em;
+  border: #fff solid 2px;
+  border-radius: 3.5px;
+  box-sizing: border-box;
+  background: #fff;
+  margin-bottom: 1em;
+  outline: none;
+  line-height: 1.3;
+  width: 100%;
+  display: inline-block;
+  transition: outline 0.2s ease-in-out;
+}
+input[type=text]:active, input[type=text]:focus, input[type=email]:active, input[type=email]:focus, input[type=password]:active, input[type=password]:focus {
+  outline: #1C7554 1px;
+  transition: outline 0.2s ease-in-out;
+}
+input[type=text].error, input[type=email].error, input[type=password].error {
+  border-color: #751C3D;
+}
+input[type=text].error:after, input[type=email].error:after, input[type=password].error:after {
+  content: "";
+  display: block;
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  background: url("/img/exclamation-icon.svg") no-repeat;
+}
+
+label {
+  font-size: 1.4em;
+  display: inline-block;
+  margin-bottom: 0.5em;
+}
+label:after {
+  content: ":";
+}
+input[type=checkbox] {
+  display: none;
+}
+input[type=checkbox] + label {
+  margin-bottom: 1.5em;
+  vertical-align: middle;
+  line-height: 1;
+}
+input[type=checkbox] + label:before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding: 0.1em;
+  background: #fff;
+  border: #fff solid 2px;
+  border-radius: 3.5px;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+input[type=checkbox] + label:after {
+  content: "";
+}
+input[type=checkbox]:checked ~ label:before {
+  background: url("/img/tick-icon.svg") no-repeat #fff;
+}
+input[type=checkbox].error ~ label:before {
+  border-color: #751C3D;
+}
+
+label.validation {
+  display: block;
+  position: absolute;
+  background: #751C3D;
+  border-radius: 3.5px;
+  box-shadow: rgba(63, 68, 69, 0.6) 0 0 1.6em;
+  padding: 0.5em 1em;
+  margin-top: -1em;
+  right: 0;
+}
+label.validation:after {
+  content: "";
+}
+
+section.text-with-image-left {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 2em;
+  text-align: center;
+  padding: 0;
+}
+@media screen and (min-width: 768px) {
+  section.text-with-image-left {
+    flex-direction: row;
+    column-gap: 2em;
+    text-align: left;
+    padding: 0 1em;
+  }
+}
+section.text-with-image-left img {
+  max-width: 250px;
+  height: auto;
+}
+
+section.text-centered-stacked {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 650px;
+  align-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}
+@media screen and (min-width: 768px) {
+  section.text-centered-stacked {
+    padding: 0 1em;
+  }
+}
+
+html {
+  height: auto;
+}
+
+body {
+  min-height: 100%;
+  background: url("../img/bg-terrain.png") no-repeat #f5f1e7;
+  background-size: cover;
+}
+
+main {
+  padding: 0 1em;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1024px) {
+  main {
+    padding: 1.5em;
+    max-width: 40em;
+  }
+}
+main h2 {
+  text-align: center;
+}
+main #intro {
+  margin-bottom: 4em;
+}
+main #intro p {
+  margin-bottom: 0;
+}
+main h3 {
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
