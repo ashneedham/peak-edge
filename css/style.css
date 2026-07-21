@@ -437,5 +437,20 @@ main #intro p {
 main h3 {
   text-align: center;
 }
+main #experience {
+  margin-bottom: 4em;
+}
+main #experience a {
+  display: inline-block;
+  margin: 0 1em;
+}
+main #experience img {
+  max-height: 3em;
+  transition: transform 0.2s;
+}
+main #experience img:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
 
 /*# sourceMappingURL=style.css.map */
